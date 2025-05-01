@@ -1,6 +1,6 @@
 <input type="file" (change)="onFileChange($event)">
 <button (click)="onSubmit()">Upload</button>
 
-<!-- Optional: Display uploaded images -->
+
 <img *ngIf="originalImageUrl" [src]="originalImageUrl" alt="Original" />
 <img *ngIf="croppedImageUrl" [src]="croppedImageUrl" alt="Cropped" />
