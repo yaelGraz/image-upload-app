@@ -38,15 +38,19 @@ export class AppComponent {
     reader.onload = () => {
       console.log("reader.onload");
       const base64 = (reader.result as string).split(',')[1];
+      console.log("Base64 Data:", base64); // בדוק אם כאן יש בעיה
+
+    // ודא שאתה שולח את הנתונים עם מבנה נכון
+    const body = { image: base64 };
   
-      this.uploadService.uploadImage({ image: base64 })
-        .subscribe(response => {
-          this.originalImageUrl = response.originalUrl;
-          this.croppedImageUrl = response.croppedUrl;
-        }, error => {
-          console.error('Upload error:', error);
-        });
-    };
+    this.uploadService.uploadImage(body).subscribe(response => {
+      console.log("Response:", response);
+      this.originalImageUrl = response.originalUrl;
+      this.croppedImageUrl = response.croppedUrl;
+    }, error => {
+      console.error('Upload error:', error);
+    });
+  };
   
     reader.readAsDataURL(this.selectedFile);
   }
