@@ -1,6 +1,19 @@
-<input type="file" (change)="onFileChange($event)">
-<button (click)="onSubmit()">Upload</button>
+<div class="container">
+  <div class="button-row">
+    <label for="fileInput" class="custom-button">choose file </label>
+    <input id="fileInput" type="file" (change)="onFileChange($event)" hidden />
+    
+    <button class="custom-button" (click)="onSubmit()">upload</button>
+  </div>
 
-
-<img *ngIf="originalImageUrl" [src]="originalImageUrl" alt="Original" />
-<img *ngIf="croppedImageUrl" [src]="croppedImageUrl" alt="Cropped" />
+  <div class="images-row" *ngIf="originalImageUrl && croppedImageUrl">
+    <div class="image-container">
+      <h3>original</h3>
+      <img [src]="originalImageUrl" alt="Original" />
+    </div>
+    <div class="image-container">
+      <h3>cropped</h3>
+      <img [src]="croppedImageUrl" alt="Cropped" />
+    </div>
+  </div>
+</div>

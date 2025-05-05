@@ -1,7 +1,53 @@
-img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
   }
-  form, div { margin-bottom: 20px; }
+  
+  .button-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  
+  .custom-button:hover {
+    background-color: #45a049;
+  }
+  
+  .images-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-container h3 {
+    margin-bottom: 10px;
+  }
+  
+  .image-container img {
+    max-width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
   
